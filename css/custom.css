@@ -36,6 +36,12 @@
   color: var(--accent-primary);
 }
 
+/* Bold formatting */
+strong,
+b {
+  font-weight: 600;
+}
+
 .vd-overlay{ /* from code above—keep consistent */
   position:fixed; inset:0; background: rgba(0,0,0,0.5); z-index:9998; display:none;
 }

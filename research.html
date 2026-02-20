@@ -13,6 +13,54 @@
 
   <!-- Fonts (choose whatever you prefer) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Page-specific tweaks (feel free to move to css/custom.css) -->
+  <style>
+    /* spacing: a little space after the main heading (no hr) */
+    #intro-heading { margin-bottom: 0.75rem; }
+
+    /* Visual rule after 'Research in Progress' */
+    #inprogress-heading + hr {
+      border: 0;
+      border-top: 1px solid var(--muted-border, #ddd);
+      margin: 0.5rem 0 0.75rem 0;
+    }
+
+    /* Bold titles (links) and years */
+    .content .text ul li a,
+    .content .text ul li strong.title,
+    .content .text ul li span.year {
+      font-weight: 700;
+    }
+
+    /* Make research-in-progress descriptions lighter but readable */
+    .muted-desc {
+      color: #6b6b6b; /* medium-light gray; readable on white */
+      font-weight: 400;
+    }
+
+    /* Slight vertical spacing for list items */
+    .content .text ul li {
+      margin: 0.45rem 0;
+      line-height: 1.45;
+    }
+
+    /* Keep anchor style consistent but clearly bolded */
+    .content .text ul li a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .content .text ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Optional: ensure hr for other sections uses same muted color */
+    section h2 + hr {
+      border: 0;
+      border-top: 1px solid var(--muted-border, #ddd);
+      margin: 0.5rem 0 0.75rem 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -46,18 +94,39 @@
       <div class="content-table">
 
         <header>
-          <h1 class="add-top-margin" style="margin-bottom:0.25rem;">Research</h1>
-          <hr>
+          <h1 id="intro-heading" style="margin:0 0 0.5rem 0; font-family: 'Merriweather', serif; font-weight:700;">Research</h1>
         </header>
 
         <section aria-labelledby="inprogress-heading" style="margin-top:0.5rem;">
           <h2 id="inprogress-heading" class="text-no-margin">Research in Progress</h2>
+          <!-- horizontal rule after this heading -->
+          <hr>
+
           <ul class="text" style="margin-top:0.5rem;">
-            <li><strong>Sequential Bias Identification</strong>, 2026+. I propose a framework for adaptive experimentation in the presence of observational estimates with unknown biases.</li>
-            <li><strong>Joint and Independent Sampling in Clustered Survey Designs</strong>, 2026+. I characterize optimal online experiments with clustered data when the analyst is trying to identify the best group and can observe the entire cluster at a premium.</li>
-            <li><strong>Signaled Bandits — An Interpolation Approach between Bandit and Online Learning Regimes</strong>, 2026+. I present the signaled bandit game, a regime which generalizes bandit and online learning problems through noisy signals.</li>
-            <li><strong>Escaping Adverse Selection through Learning</strong>, 2026+ (joint with Hubert Wu). In an Akerlof-style model, we show agents can escape market unraveling when they are constrained to learn through prices.</li>
-            <li><strong>Sequencing and Information Provision in Search Games</strong>, 2026+. I characterize a search recommendation model where the designer can only learn from the search behavior of the agent given the recommendation.</li>
+            <li>
+              <strong class="title">Sequential Bias Identification</strong>, <strong class="year">2026+</strong>
+              <span class="muted-desc">. I propose a framework for adaptive experimentation in the presence of observational estimates with unknown biases.</span>
+            </li>
+
+            <li>
+              <strong class="title">Joint and Independent Sampling in Clustered Survey Designs</strong>, <strong class="year">2026+</strong>
+              <span class="muted-desc">. I characterize optimal online experiments with clustered data when the analyst is trying to identify the best group and can observe the entire cluster at a premium.</span>
+            </li>
+
+            <li>
+              <strong class="title">Signaled Bandits — An Interpolation Approach between Bandit and Online Learning Regimes</strong>, <strong class="year">2026+</strong>
+              <span class="muted-desc">. I present the signaled bandit game, a regime which generalizes bandit and online learning problems through noisy signals.</span>
+            </li>
+
+            <li>
+              <strong class="title">Escaping Adverse Selection through Learning</strong>, <strong class="year">2026+</strong> <span class="muted-desc">(joint with Hubert Wu)</span>
+              <span class="muted-desc">. In an Akerlof-style model, we show agents can escape market unraveling when they are constrained to learn through prices.</span>
+            </li>
+
+            <li>
+              <strong class="title">Sequencing and Information Provision in Search Games</strong>, <strong class="year">2026+</strong>
+              <span class="muted-desc">. I characterize a search recommendation model where the designer can only learn from the search behavior of the agent given the recommendation.</span>
+            </li>
           </ul>
         </section>
 
@@ -65,7 +134,9 @@
           <h2 id="notes-heading" class="add-top-margin">Additional Notes</h2>
           <hr>
           <ul class="text" style="margin-top:0.5rem;">
-            <li><a href="https://presidente-carlos.github.io/files/working_papers/tail_probs_and_LR.pdf" target="_blank" rel="noopener">Likelihood Ratios and Large Deviations: A Not Surprising Connection</a>, 2024, <em>University of Oxford</em>.</li>
+            <li>
+              <strong><a href="https://presidente-carlos.github.io/files/working_papers/tail_probs_and_LR.pdf" target="_blank" rel="noopener">Likelihood Ratios and Large Deviations: A Not Surprising Connection</a></strong>, <strong class="year">2024</strong>.
+            </li>
           </ul>
         </section>
 
@@ -73,16 +144,22 @@
           <h2 id="prephd-heading" class="add-top-margin">Pre-PhD Research</h2>
           <hr>
           <p class="text" style="margin-bottom:0.5rem;">
-            Please bear in mind that the following papers have not been peer reviewed. Moreover, my training was faulting when I wrote them (it still is). I hope that you are not too harsh on me. ;)
+            Please bear in mind that the following papers have not been peer reviewed. Moreover, my training was faulting when I wrote them (it still is), so I hope that you are not too harsh on me. ;)
           </p>
 
           <ul class="text" style="margin-top:0.5rem;">
-            <li><a href="https://github.com/presidente-carlos/adverse_selection" target="_blank" rel="noopener">Adaptive Wage Setting: A Prior-free Theory of Adverse Selection and Monopsony Markets</a>, 2023, <em>University of Oxford</em>.</li>
-            <li><a href="https://github.com/presidente-carlos/knapsack_bandits" target="_blank" rel="noopener">Hiring Decisions with Knapsack Bandits</a>, 2023, <em>University of Oxford</em>.</li>
-            <li><a href="https://presidente-carlos.github.io/files/undergrad_research/health_insurance_2021.pdf" target="_blank" rel="noopener">An Econometric Insight into Health Insurance Demand: Aporophobia and Racism as Drivers of Health Insurance Demand in the UK (1991–2008)</a>, 2021, <em>Universidad Carlos III de Madrid</em>.</li>
-            <li><a href="https://presidente-carlos.github.io/files/undergrad_research/china_2021.pdf" target="_blank" rel="noopener">A Narratological Approach to Chinese Politics: Developing a Narrative-Based Theoretical Framework in South East China Sea and Hong Kong Mainland Conflicts (1974–2020)</a>, 2021, <em>Universidad Carlos III de Madrid</em>.</li>
-            <li><a href="https://presidente-carlos.github.io/files/undergrad_research/china_2020.pdf" target="_blank" rel="noopener">Chinese Narrative in the South East China Sea and its Effect on Chinese Realpolitik: Developing a Theoretical Framework for Understanding Chinese Imperial Practices</a>, 2020, <em>Bocconi University</em>.</li>
-            <li><a href="https://presidente-carlos.github.io/files/undergrad_research/pregnancy_2019.pdf" target="_blank" rel="noopener">Pregnancy and its Effects on Education: An Econometric Insight into the Impact of Teenage Pregnancy on Higher Education</a>, 2019, <em>University of California, Berkeley</em>.</li>
+            <li>
+              <strong><a href="https://github.com/presidente-carlos/adverse_selection" target="_blank" rel="noopener">Adaptive Wage Setting: A Prior-free Theory of Adverse Selection and Monopsony Markets</a></strong>, <strong class="year">2023</strong>, <em>University of Oxford</em>.
+            </li>
+            /*<li><a href="https://github.com/presidente-carlos/knapsack_bandits" target="_blank" rel="noopener">Hiring Decisions with Knapsack Bandits</a>, 2023, <em>University of Oxford</em>.</li>*/
+            <li>
+              <strong><a href="https://presidente-carlos.github.io/files/undergrad_research/health_insurance_2021.pdf" target="_blank" rel="noopener">An Econometric Insight into Health Insurance Demand: Aporophobia and Racism as Drivers of Health Insurance Demand in the UK (1991–2008)</a></strong>, <strong class="year">2021</strong>.
+            </li>
+            <li>
+              <strong><a href="https://presidente-carlos.github.io/files/undergrad_research/china_2021.pdf" target="_blank" rel="noopener">A Narratological Approach to Chinese Politics: Developing a Narrative-Based Theoretical Framework in South East China Sea and Hong Kong Mainland Conflicts (1974–2020)</a></strong>, <strong class="year">2021</strong>.
+            </li>
+            /*<li><a href="https://presidente-carlos.github.io/files/undergrad_research/china_2020.pdf" target="_blank" rel="noopener">Chinese Narrative in the South East China Sea and its Effect on Chinese Realpolitik: Developing a Theoretical Framework for Understanding Chinese Imperial Practices</a>, 2020, <em>Bocconi University</em>.</li>*/
+            /*<li><a href="https://presidente-carlos.github.io/files/undergrad_research/pregnancy_2019.pdf" target="_blank" rel="noopener">Pregnancy and its Effects on Education: An Econometric Insight into the Impact of Teenage Pregnancy on Higher Education</a>, 2019, <em>University of California, Berkeley</em>.</li>*/
           </ul>
         </section>
 

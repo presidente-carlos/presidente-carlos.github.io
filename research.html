@@ -19,11 +19,17 @@
     /* spacing: a little space after the main heading (no hr) */
     #intro-heading { margin-bottom: 0.75rem; }
 
-    /* Visual rule after 'Research in Progress' */
-    #inprogress-heading + hr {
+    /* make all hr look consistent: 1px height, muted background */
+    hr {
       border: 0;
-      border-top: 1px solid var(--muted-border, #ddd);
+      height: 1px;
+      background: var(--muted-border, #ddd);
       margin: 0.5rem 0 0.75rem 0;
+    }
+
+    /* Visual rule specifically after 'Research in Progress' (keeps same spacing) */
+    #inprogress-heading + hr {
+      margin-top: 0.5rem;
     }
 
     /* Bold titles (links) and years
@@ -46,19 +52,23 @@
       line-height: 1.45;
     }
 
-    /* Keep anchor style consistent but clearly bolded */
+    /* Link styling: restore blue links while keeping bold for titles */
+    :root {
+      --link-color: #0b66ff; /* pleasant blue — tweak if you prefer */
+      --link-hover: #064fd6;
+    }
     .content ul.text li a {
-      color: inherit;
+      color: var(--link-color);
       text-decoration: none;
     }
-    .content ul.text li a:hover {
+    .content ul.text li a:hover,
+    .content ul.text li a:focus {
+      color: var(--link-hover);
       text-decoration: underline;
     }
 
-    /* Optional: ensure hr for other sections uses same muted color */
+    /* ensure the H2+HR rule is consistent (already handled by hr) */
     section h2 + hr {
-      border: 0;
-      border-top: 1px solid var(--muted-border, #ddd);
       margin: 0.5rem 0 0.75rem 0;
     }
   </style>
@@ -132,7 +142,7 @@
         </section>
 
         <section aria-labelledby="notes-heading" style="margin-top:1rem;">
-          <h2 id="prephd-heading" class="add-top-margin">Additional Notes</h2>
+          <h2 id="notes-heading" class="add-top-margin">Additional Notes</h2>
           <hr>
           <ul class="text" style="margin-top:0.5rem;">
             <li>

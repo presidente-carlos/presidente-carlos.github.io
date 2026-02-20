@@ -1,34 +1,44 @@
-/*************************************************************************
- * Your custom CSS file
- *************************************************************************/
+/* custom.css — cleaned
+   Preserves original selectors for compatibility; use with global variables. */
 
-.custom-dropdown {
-  width: 240px;
+:root{
+  --control-width-default: 240px;
+  --accent-primary: #007bff; /* keep in sync with controls.css */
 }
 
+/* Compact controls sizing */
+.custom-dropdown,
 .custom-textbox {
-  width: 240px;
+  width: var(--control-width-default);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
+/* Dialogs (hidden by default) */
 #dialog-1,
 #dialog-2,
 #dialog-3,
 #dialog-4,
 #share-dialog {
-  display: none;
+  display: none; /* set to block / grid with JS when opening */
 }
 
+/* Share URL input — selectable and full width */
 #share-url {
   width: 100%;
-  -webkit-touch-callout: default !important;
-  -webkit-user-select: text !important;
-  -khtml-user-select: text !important;
-  -moz-user-select: text !important;
-  -ms-user-select: text !important;
-  user-select: text !important;
+  user-select: text;
+  box-sizing: border-box;
 }
 
+/* Copy prompt (hidden by default) */
 #share-url-copy-prompt {
   display: none;
-  color: #007bff;
+  color: var(--accent-primary);
 }
+
+.vd-overlay{ /* from code above—keep consistent */
+  position:fixed; inset:0; background: rgba(0,0,0,0.5); z-index:9998; display:none;
+}
+.vd-wrapper{ position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); z-index:9999; display:none; }
+.vd-dialog{ background:white; padding:1rem; border-radius:6px; box-shadow:0 8px 30px rgba(0,0,0,0.2); }
+.vd-no-scroll{ position: fixed; left:0; right:0; overflow:hidden; }

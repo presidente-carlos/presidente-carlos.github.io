@@ -1,419 +1,130 @@
 <!doctype html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Carlos Gonzalez</title>
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/widgets.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="js/menu.js"></script>
-  <script src="js/widgets.js"></script>
-  <script src="js/custom.js"></script>
-  <style>
-    .menu-widget {
-      color: rgb(255, 255, 255) !important;
-      opacity: 1 !important;
-      font-weight: 700 !important;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carlos Gonzalez — Presentations</title>
+
+  <!-- Core styles (kept same filenames) -->
+  <link href="css/frame.css" rel="stylesheet" />
+  <link href="css/controls.css" rel="stylesheet" />
+  <link href="css/widgets.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="menu-container"></div>
-  <div class="content-container">
-    <div class="content">
-      <div class="content-table flex-column">
-        <!--<div class="flex-row">
-          <div class="flex-item flex-column">
-            <p class="text add-top-margin">
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
-              augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-              condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
-              vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae
-              sapien ut libero venenatis faucibus. Nullam quis ante.
-            </p>
-          </div>
+  <!-- Header (shared) -->
+  <header class="site-header menu-container" role="banner">
+    <div class="menu">
+      <div class="menu-table">
+        <div class="logo">
+          <a href="index.html" class="brand-link">Carlos Gonzalez</a>
         </div>
-        <!-------------------------------------------------------------------------------------------->
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2 class="add-top-margin"></h2>
-            <p class="text">
-            </p>
-          </div>
-	</div>
-	<div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2 class="add-top-margin"> Presentations </h2>
-            <hr>
-            <p class="text">
-            <ul>
-		    <li> <a href="https://presidente-carlos.github.io/files/presentations/gmm_bandits_presentation.pdf">GMM Bandits </a> (WIP). <i> University of Oxford </i>, Econometrics Lunch Seminar, April 2025
-		    <li> <a href="https://presidente-carlos.github.io/files/presentations/sequencing.pdf">Optimal Ordering and Information Strategies in Sequential Search Problems </a> (WIP). <i> University of Oxford </i>, Student Research Workshop in Micro Theory, May 2024; and Univ Graduate Lunch Seminar, , February 2024
-		    <li> <a href="https://presidente-carlos.github.io/files/presentations/adverse_selection_gonzalez.pdf">Adaptive Wage Setting: A Prior-Free Theory of Adverse Selection and Monopsony Markets </a> (WIP). CIREQ Conference on Big Data and Artificial Intelligence, <i> McGill University </i>, June 2023
-	    <ul>
-            </p>
-          </div>
 
-	<div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2 class="add-top-margin"> External Papers </h2>
-            <hr>
-            <p class="text">
-            <ul>
-		<li> <a href="https://presidente-carlos.github.io/files/presentations/mini_signaled_bandits.pdf"> Updates on Signaled Bandits </a> Econometrics Lunch <i> University of Oxford</i>, June 2025.</li>
-		<li> <a href="https://presidente-carlos.github.io/files/presentations/recommender_systems.pdf"> Introduction to Recommender Systems </a> by Charu C Aggarwal. Machine Learning Reading Group <i> University of Oxford</i>, June 2025.</li>
-		<li> <a href="https://presidente-carlos.github.io/files/presentations/thesis_writing.pdf"> How to Write a Thesis </a> MPhil Thesis Writing Student Panel <i> University of Oxford</i>, May 2025.</li>
-		    <li> <a href="https://presidente-carlos.github.io/files/presentations/haiku_presentation_2.pdf"> Who is Carlos and Why is He in the Econometrics Group II? </a> Econometrics Lunch <i> University of Oxford</i>, November 2024.</li>
-		    <li> <a href="https://presidente-carlos.github.io/files/presentations/bhj_formula_iv.pdf"> Design-based Identification with Formula Instruments </a> by Kirill Borusyak, Peter Hull and Xavier Jaravel. Topics in Econometrics <i> University of Oxford</i>, November 2024.</li>
-		    <li> <a href="https://presidente-carlos.github.io/files/presentations/strategic_decentralized_matching.pdf"> Strategic Decentralized Matching </a> by Andrew Ferdowsian, Muriel Nierdele and Leeat Yariv. Micro Theory Reading Group <i> University of Oxford</i>, February 2024.</li>
-		    <li> <a href="https://presidente-carlos.github.io/files/presentations/haiku_presentation.pdf"> Who is Carlos and Why is He in the Econometrics Group? </a> Econometrics Lunch <i> University of Oxford</i>, November 2023.</li>
-		    <li> <a href="https://presidente-carlos.github.io/files/presentations/interpolation_belkin.pdf">Fit without Fear: Remarkable Mathematical Phenomena of Deep Learning through the Prism of Interpolation </a> by Mikhail Belkin. Topics in Econometrics <i> University of Oxford</i>, February 2023.</li>
-		    <li> <a href="https://presidente-carlos.github.io/files/presentations/oco_hazan.pdf">Online Convex Optimization</a> by Elad Hazan. Topics in Econometrics at <i> University of Oxford</i>, January 2023.</li>
-	    <ul>
-            </p>
-          </div>
-	</div>  
-	</div>
-            <!--<div class="control-group">
-              <div class="custom-dropdown stretch-on-mobile">
-                <a tabindex="0" href="javascript:void(0)"><span>Dropdown Menu (No JavaScript)</span></a>
-                <div>
-                  <a href="javascript:void(0)">Item 1</a>
-                  <a href="javascript:void(0)">Item 2</a>
-                  <a href="javascript:void(0)">Item 3</a>
-                  <a href="javascript:void(0)">Item 4</a>
-                  <a href="javascript:void(0)">Item 5</a>
-                </div>
-              </div>
-              <div class="custom-dropdown stretch-on-mobile large">
-                <a tabindex="0" href="javascript:void(0)"><span>Large Dropdown Menu (No JavaScript)</span></a>
-                <div>
-                  <a href="javascript:void(0)">Item 1</a>
-                  <a href="javascript:void(0)">Item 2</a>
-                  <a href="javascript:void(0)">Item 3</a>
-                  <a href="javascript:void(0)">Item 4</a>
-                  <a href="javascript:void(0)">Item 5</a>
-                </div>
-              </div>
-              <div class="custom-dropdown stretch-on-mobile" id="custom-dropdown">
-                <a tabindex="0" href="javascript:void(0)"><span>Dropdown Menu (No JavaScript)</span></a>
-                <div>
-                  <a href="javascript:void(0)">Item 1</a>
-                  <a href="javascript:void(0)">Item 2</a>
-                  <a href="javascript:void(0)">Item 3</a>
-                  <a href="javascript:void(0)">Item 4</a>
-                  <a href="javascript:void(0)">Item 5</a>
-                </div>
-              </div>
-              <div class="custom-dropdown stretch-on-mobile large" id="custom-dropdown-large">
-                <a tabindex="0" href="javascript:void(0)"><span></span></a>
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-------------------------------------------------------------------------------------------->
-        <!--<div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2 class="add-top-margin">Radio Button</h2>
-            <hr>
-            <p class="text">
-              Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
-              coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues.
-              It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un
-              simplificat Angles, quam un skeptic Cambridge amico dit me.
-            </p>
-            <div class="control-group">
-              <div class="custom-radio custom-radio-left">
-                <input type="radio" name="playback-speed" value="slow" id="speed-slow">
-                <label for="speed-slow">Slow</label>
-              </div>
-              <div class="custom-radio custom-radio-middle">
-                <input type="radio" name="playback-speed" value="medium" id="speed-medium" checked>
-                <label for="speed-medium">Medium</label>
-              </div>
-              <div class="custom-radio custom-radio-right">
-                <input type="radio" name="playback-speed" value="fast" id="speed-fast">
-                <label for="speed-fast">Fast</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-------------------------------------------------------------------------------------------->
-        <!--<div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2 class="add-top-margin">Dialog Button and Box</h2>
-            <hr>
-            <p class="text">
-              Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
-              coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues.
-              It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un
-              simplificat Angles, quam un skeptic Cambridge amico dit me.
-            </p>
-            <div class="control-group">
-              <button id="dialog-btn-1" class="custom-button-flat"><img src="img/setting.png"><span>Dialog 1</span></button>
-              <button id="dialog-btn-2" class="custom-button-flat"><img src="img/setting.png"><span>Dialog 2</span></button>
-              <button id="dialog-btn-3" class="custom-button-flat"><img src="img/setting.png"><span>Dialog 3</span></button>
-              <button id="dialog-btn-4" class="custom-button-flat"><img src="img/setting.png"><span>Dialog 4</span></button>
-              <button id="share-btn" title="Share" class="custom-button-flat"><img src="img/share.png"><span>Share</span></button>
-            </div>
-            <div id="dialog-1" title="Dialog 1" data-role="none">
-              <p>No action, attached and centered to the window, full-width button.</p>
-            </div>
-            <div id="dialog-2" title="Dialog 2" data-role="none">
-              <p>With action, attached and centered to the window.</p>
-            </div>
-            <div id="dialog-3" title="Dialog 3" data-role="none">
-              <p>No action and cancel buttons, attached and centered to the content element.</p>
-            </div>
-            <div id="dialog-4" title="Dialog 4" data-role="none">
-              <p>With action, attached and centered to the window, reversed button positions.</p>
-            </div>
-            <div id="share-dialog" title="Share" data-role="none">
-              <p>Copy the following link and share it with others:</p>
-              <input id="share-url" class="custom-textbox" type="text" autofocus="autofocus" value="https://yenchiah.github.io/project-website-template/" readonly>
-              <p id="share-url-copy-prompt">The share link is copied.</p>
-            </div>
-          </div>
-        </div>
-        <!-------------------------------------------------------------------------------------------->
-        <!--<div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2 class="add-top-margin">Gallery (Generated Using JavaScript)</h2>
-            <hr>
-            <p class="text">
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
-              augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-              condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
-              vel, luctus pulvinar, hendrerit id, lorem.
-            </p>
-          </div>
-        </div>
-        <div class="gallery"></div>
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <p class="text">
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
-              augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-              condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
-              vel, luctus pulvinar, hendrerit id, lorem.
-            </p>
-          </div>
-        </div>
-        <!-------------------------------------------------------------------------------------------->
-        <!--<div class="flex-row">
-          <div class="flex-item flex-column full-width">
-            <h2 class="add-top-margin">Tab</h2>
-            <hr>
-            <p class="text">
-              Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
-              coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues.
-              It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un
-              simplificat Angles, quam un skeptic Cambridge amico dit me.
-            </p>
-            <div class="custom-tab" id="custom-tab">
-              <div class="custom-tab-menu center">
-                <a class="custom-tab-menu-item active" data-content="iframe">Iframe</a>
-                <a class="custom-tab-menu-item" data-content="image">Image</a>
-                <a class="custom-tab-menu-item" data-content="table">Table</a>
-              </div>
-              <div class="custom-tab-content" data-content="image">
-                <p class="text text-center graph-title">
-                  Title for the bottom image
-                </p>
-                <img class="image no-top-margin max-width-400 center add-top-margin-small" src="img/dummay-img.png">
-                <p class="text text-center graph-title">
-                  Title for the bottom image
-                </p>
-                <img class="image no-top-margin max-width-400 center add-top-margin-small" src="img/dummay-img.png">
-                <p class="text">
-                  Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
-                  augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-                  condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc.
-                </p>
-                <p class="text">
-                  Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
-                  augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-                  condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc.
-                </p>
-              </div>
-              <div class="custom-tab-content" data-content="table">
-                <p class="text text-center graph-title">
-                  Title for the bottom table
-                </p>
-                <div class="custom-table-container center add-top-margin-small">
-                  <table class="custom-table">
-                    <thead>
-                      <tr class="bg-color-gray">
-                        <th>Number of</th>
-                        <th class="text-center">Unique Users</th>
-                        <th class="text-center">Smell Reports</th>
-                        <th class="text-center">Interaction Events</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Enthusiasts</td>
-                        <td class="text-center">9.4%</td>
-                        <td class="text-center">50.6%</td>
-                        <td class="text-center">44.8%</td>
-                      </tr>
-                      <tr class="bg-color-light-gray">
-                        <td>Explorers</td>
-                        <td class="text-center">36.1%</td>
-                        <td class="text-center">37.3%</td>
-                        <td class="text-center">27.3%</td>
-                      </tr>
-                      <tr>
-                        <td>Contributors</td>
-                        <td class="text-center">13.0%</td>
-                        <td class="text-center">12.1%</td>
-                        <td class="text-center">n/a</td>
-                      </tr>
-                      <tr class="bg-color-light-gray">
-                        <td>Observers</td>
-                        <td class="text-center">41.6%</td>
-                        <td class="text-center">n/a</td>
-                        <td class="text-center">27.9%</td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <td>Size (N)</td>
-                        <td class="text-center">2,237</td>
-                        <td class="text-center">8,112</td>
-                        <td class="text-center">79,447</td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
-                <p class="text text-center graph-title">
-                  Title for the bottom table
-                </p>
-                <div class="custom-table-container center add-top-margin-small">
-                  <table class="custom-table">
-                    <thead>
-                      <tr class="bg-color-gray">
-                        <th>Number of</th>
-                        <th class="text-center">Unique Users</th>
-                        <th class="text-center">Smell Reports</th>
-                        <th class="text-center">Interaction Events</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Enthusiasts</td>
-                        <td class="text-center">9.4%</td>
-                        <td class="text-center">50.6%</td>
-                        <td class="text-center">44.8%</td>
-                      </tr>
-                      <tr class="bg-color-light-gray">
-                        <td>Explorers</td>
-                        <td class="text-center">36.1%</td>
-                        <td class="text-center">37.3%</td>
-                        <td class="text-center">27.3%</td>
-                      </tr>
-                      <tr>
-                        <td>Contributors</td>
-                        <td class="text-center">13.0%</td>
-                        <td class="text-center">12.1%</td>
-                        <td class="text-center">n/a</td>
-                      </tr>
-                      <tr class="bg-color-light-gray">
-                        <td>Observers</td>
-                        <td class="text-center">41.6%</td>
-                        <td class="text-center">n/a</td>
-                        <td class="text-center">27.9%</td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <td>Size (N)</td>
-                        <td class="text-center">2,237</td>
-                        <td class="text-center">8,112</td>
-                        <td class="text-center">79,447</td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
-              </div>
-              <div class="custom-tab-content no-padding" data-content="iframe">
-                <p class="text text-center graph-title add-top-right-left-padding add-bottom-border">
-                  Title for the bottom iframe
-                </p>
-                <iframe class="iframe-in-tab" src="http://yenchiah.me/geo-heatmap/smell.html"></iframe>
-              </div>
-            </div>
-            <p class="text">
-              Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
-              coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues.
-              It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un
-              simplificat Angles, quam un skeptic Cambridge amico dit me.
-            </p>
-          </div>
-        </div>
-        <!-------------------------------------------------------------------------------------------->
-        <!--<div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2 class="add-top-margin">Legend</h2>
-            <hr>
-            <p class="text">
-              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
-              sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e
-              li plu commun vocabules.
-            </p>
-            <div class="custom-legend noselect" style="width: 210px">
-              <h3 class="legend-title">Fruits (No JavaScript)</h3>
-              <div class="legend-scale">
-                <ul class="legend-labels">
-                  <li><span style="background:#b05ed6;"></span>Apple</li>
-                  <li><span style="background:#dae65f;"></span>Banana</li>
-                  <li><span style="background:#6aeec1;"></span>Mango</li>
-                  <li><span style="background:#ec8a27;"></span>Watermelon</li>
-                </ul>
-                <div class="legend-source">Source: <a target="_blank" href="https://github.com/yenchiah/project-website-template">GitHub</a></div>
-              </div>
-            </div>
-            <div class="custom-legend noselect" style="width: 210px" id="custom-legend">
-              <h3 class="legend-title">Fruits (Collapsible)</h3>
-              <div class="legend-scale">
-                <ul class="legend-labels">
-                  <li><span style="background:#b05ed6;"></span>Apple</li>
-                  <li><span style="background:#dae65f;"></span>Banana</li>
-                  <li><span style="background:#6aeec1;"></span>Mango</li>
-                  <li><span style="background:#ec8a27;"></span>Watermelon</li>
-                </ul>
-                <div class="legend-source">Source: <a target="_blank" href="https://github.com/yenchiah/project-website-template">GitHub</a></div>
-              </div>
-            </div>
-            <p class="text">
-              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
-              sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e
-              li plu commun vocabules.
-            </p>
-          </div>
-        </div>
-        <!-------------------------------------------------------------------------------------------->
-        <!--<div class="flex-row">
-          <div class="flex-item flex-item-stretch flex-column">
-            <p class="text text-small text-italic">
-              Credits: <span class="highlight-text">Organization One</span>: Author One and Author Two / <span class="highlight-text">Organization Two</span>: Author Three and Author Four
-            </p>
-          </div>
-        </div>
+        <button class="nav-toggle menu-button" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+
+        <nav id="main-navigation" class="menu-items" role="navigation" aria-label="Primary">
+          <ul class="nav-list" style="margin:0; padding:0; list-style:none; display:flex; gap:1rem; align-items:center;">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="https://presidente-carlos.github.io/files/CV.pdf" target="_blank" rel="noopener">CV</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="presentations.html" class="menu-widget">Presentations</a></li>
+            <li><a href="https://github.com/presidente-carlos" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>-->
-  </div>
-</body>
+    </div>
+  </header>
 
+  <main class="content-container" id="main">
+    <div class="content">
+      <div class="content-table">
+
+        <header>
+          <h1 class="add-top-margin" style="margin-bottom:0.25rem;">Presentations</h1>
+          <hr>
+        </header>
+
+        <section aria-labelledby="presentations-heading" style="margin-bottom:1.25rem;">
+          <h2 id="presentations-heading" class="text-no-margin" style="font-size:1rem; font-weight:600;">Selected Presentations</h2>
+          <ul class="text" style="margin-top:0.5rem;">
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/gmm_bandits_presentation.pdf" target="_blank" rel="noopener">GMM Bandits</a> (WIP). <em>Econometrics Lunch Seminar, University of Oxford</em>, April 2025.
+            </li>
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/sequencing.pdf" target="_blank" rel="noopener">Optimal Ordering and Information Strategies in Sequential Search Problems</a> (WIP). <em>Student Research Workshop in Micro Theory, University of Oxford</em>, May 2024; also presented at Univ Graduate Lunch Seminar, February 2024.
+            </li>
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/adverse_selection_gonzalez.pdf" target="_blank" rel="noopener">Adaptive Wage Setting: A Prior-Free Theory of Adverse Selection and Monopsony Markets</a> (WIP). <em>CIREQ Conference on Big Data and Artificial Intelligence, McGill University</em>, June 2023.
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="external-papers-heading">
+          <h2 id="external-papers-heading" class="add-top-margin" style="margin-bottom:0.25rem;">External / Reading Group Papers & Talks</h2>
+          <hr>
+          <ul class="text" style="margin-top:0.5rem;">
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/mini_signaled_bandits.pdf" target="_blank" rel="noopener">Updates on Signaled Bandits</a> — Econometrics Lunch, University of Oxford, June 2025.
+            </li>
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/recommender_systems.pdf" target="_blank" rel="noopener">Introduction to Recommender Systems</a> (Charu C. Aggarwal) — Machine Learning Reading Group, University of Oxford, June 2025.
+            </li>
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/thesis_writing.pdf" target="_blank" rel="noopener">How to Write a Thesis</a> — MPhil Thesis Writing Student Panel, University of Oxford, May 2025.
+            </li>
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/haiku_presentation_2.pdf" target="_blank" rel="noopener">Who is Carlos and Why is He in the Econometrics Group II?</a> — Econometrics Lunch, University of Oxford, November 2024.
+            </li>
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/bhj_formula_iv.pdf" target="_blank" rel="noopener">Design-based Identification with Formula Instruments</a> (Borusyak, Hull & Jaravel) — Topics in Econometrics, University of Oxford, November 2024.
+            </li>
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/strategic_decentralized_matching.pdf" target="_blank" rel="noopener">Strategic Decentralized Matching</a> (Ferdowsian, Nierdele & Yariv) — Micro Theory Reading Group, University of Oxford, February 2024.
+            </li>
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/haiku_presentation.pdf" target="_blank" rel="noopener">Who is Carlos and Why is He in the Econometrics Group?</a> — Econometrics Lunch, University of Oxford, November 2023.
+            </li>
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/interpolation_belkin.pdf" target="_blank" rel="noopener">Fit without Fear: Remarkable Mathematical Phenomena of Deep Learning through the Prism of Interpolation</a> (M. Belkin) — Topics in Econometrics, University of Oxford, February 2023.
+            </li>
+            <li>
+              <a href="https://presidente-carlos.github.io/files/presentations/oco_hazan.pdf" target="_blank" rel="noopener">Online Convex Optimization</a> (Elad Hazan) — Topics in Econometrics, University of Oxford, January 2023.
+            </li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer style="text-align:center; padding:2rem 1rem; color:var(--muted-text);">
+    <small>&copy; <span id="year"></span> Carlos Gonzalez — All rights reserved.</small>
+  </footer>
+
+  <!-- Small script: updates footer year and nav toggle -->
+  <script>
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // nav toggle (same pattern used on index.html)
+    (function () {
+      const header = document.querySelector('.site-header');
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('main-navigation');
+      if (!btn || !nav || !header) return;
+
+      btn.addEventListener('click', () => {
+        const open = header.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        nav.style.display = open ? 'block' : '';
+      });
+    })();
+  </script>
+</body>
 </html>

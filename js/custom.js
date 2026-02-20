@@ -1,151 +1,168 @@
 /*************************************************************************
- * Your custom JS file
+ * custom.js — modernized
  *************************************************************************/
 
 (function () {
   "use strict";
 
-  // The widget object
-  var widgets;
+  let widgets = null;
 
-  function createShareButtonAndDialog() {
-    var $share_url_copy_prompt = $("#share-url-copy-prompt");
+  const createShareButtonAndDialog = () => {
+    const $shareUrlCopyPrompt = $("#share-url-copy-prompt");
+    const $shareDialogSel = $("#share-dialog");
 
-    // Create the share dialog
-    var $share_dialog = widgets.createCustomDialog({
+    if (!$shareDialogSel.length) return;
+
+    // Create the share dialog via widgets (guard if widgets not ready)
+    const $shareDialog = widgets.createCustomDialog({
       selector: "#share-dialog",
       full_width_button: true,
       action_text: "Copy to clipboard",
       close_dialog_on_action: false,
       show_cancel_btn: false,
-      action_callback: function () {
+      action_callback: () => {
+        // widget helper expected to copy text from an element with id "share-url"
         widgets.copyText("share-url");
-        $share_url_copy_prompt.show();
+        $shareUrlCopyPrompt.show();
+        // For accessibility, set focus back to the copy button or inform user
+        $shareDialog.find(".ui-dialog-buttonpane .ui-button").first().focus();
       }
     });
-    $share_dialog.on("dialogclose", function () {
-      $share_url_copy_prompt.hide();
+
+    // Hide prompt when dialog closes
+    $shareDialog.on("dialogclose", () => {
+      $shareUrlCopyPrompt.hide();
     });
 
-    // Set the event of the share url textbox
-    var $share_url = $("#share-url");
-    $share_url.focus(function () {
+    // Set events for the share url textbox (select on focus/click)
+    const $shareUrl = $("#share-url");
+    $shareUrl.on("focus click", function () {
       $(this).select();
-    }).click(function () {
-      $(this).select();
-    }).mouseup(function (e) {
+    }).on("mouseup", (e) => {
+      // Prevent deselection on mouseup (classic workaround)
       e.preventDefault();
     });
 
-    // Set the event of the share button
-    $("#share-btn").on("click", function () {
-      $share_dialog.dialog("open");
+    // Wire up the share button (if present)
+    $("#share-btn").on("click", () => {
+      $shareDialog.dialog("open");
     });
-  }
+  };
 
-  function init() {
-    // Create the widget object
-    widgets = new edaplotjs.Widgets();
+  const createGalleryIfNeeded = () => {
+    const $gallery = $(".gallery");
+    if (!$gallery.length) return;
 
-    // Set custom dropdown
-    widgets.setCustomDropdown($("#custom-dropdown"), {
-      items: ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"],
-      //init_index: 0, // You can use this parameter to set the initial item for displaying
-      init_text: "Dropdown Menu (With JavaScript)",
-      on_item_click_callback: function ($ui) {
-        console.log($ui.text());
-      }
-    });
-    widgets.setCustomDropdown($("#custom-dropdown-large"), {
-      items: ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"],
-      //init_index: 0, // You can use this parameter to set the initial item for displaying
-      init_text: "Large Dropdown Menu (With JavaScript)",
-      on_item_click_callback: function ($ui) {
-        console.log($ui.text());
-      }
-    });
+    // If you want lazy loading later, add loading="lazy" attributes
+    for (let i = 0; i < 8; i++) {
+      const item = $(`
+        <a href="javascript:void(0)" class="flex-column" role="button" aria-label="Gallery image ${i + 1}">
+          <img src="img/dummay-img.png" alt="Image caption ${i + 1}">
+          <div>Image Caption</div>
+        </a>
+      `);
+      $gallery.append(item);
+    }
+  };
 
-    // Set custom radio
+  const initDialogs = () => {
+    // Only create dialogs if the selectors exist on the page
+    if ($("#dialog-1").length) {
+      const $dialog1 = widgets.createCustomDialog({
+        selector: "#dialog-1",
+        full_width_button: true
+      });
+      $("#dialog-btn-1").on("click", () => $dialog1.dialog("open"));
+    }
+
+    if ($("#dialog-2").length) {
+      const $dialog2 = widgets.createCustomDialog({
+        selector: "#dialog-2",
+        action_callback: () => console.log("confirm"),
+        cancel_callback: () => console.log("cancel")
+      });
+      $("#dialog-btn-2").on("click", () => $dialog2.dialog("open"));
+    }
+
+    if ($("#dialog-3").length) {
+      const $dialog3 = widgets.createCustomDialog({
+        selector: "#dialog-3",
+        parent: $(".content"),
+        show_cancel_btn: false,
+        cancel_callback: () => console.log("cancel")
+      });
+      $("#dialog-btn-3").on("click", () => $dialog3.dialog("open"));
+    }
+
+    if ($("#dialog-4").length) {
+      const $dialog4 = widgets.createCustomDialog({
+        selector: "#dialog-4",
+        action_text: "Action",
+        reverse_button_positions: true,
+        full_width_button: true,
+        action_callback: () => console.log("action"),
+        cancel_text: "Back",
+        cancel_callback: () => console.log("back")
+      });
+      $("#dialog-btn-4").on("click", () => $dialog4.dialog("open"));
+    }
+  };
+
+  const initDropdownsAndRadios = () => {
+    // init widgets object dropdowns if present
+    const $dd1 = $("#custom-dropdown");
+    if ($dd1.length) {
+      widgets.setCustomDropdown($dd1, {
+        items: ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"],
+        init_text: "Dropdown Menu (With JavaScript)",
+        on_item_click_callback: ($ui) => console.log($ui.text())
+      });
+    }
+
+    const $ddLarge = $("#custom-dropdown-large");
+    if ($ddLarge.length) {
+      widgets.setCustomDropdown($ddLarge, {
+        items: ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"],
+        init_text: "Large Dropdown Menu (With JavaScript)",
+        on_item_click_callback: ($ui) => console.log($ui.text())
+      });
+    }
+
+    // custom radio change handler (if radios exist)
     $("input:radio[name='playback-speed']").on("change", function () {
       console.log($(this).val());
     });
+  };
 
-    // Set custom dialog type 1
-    var $dialog_1 = widgets.createCustomDialog({
-      selector: "#dialog-1",
-      full_width_button: true
-    });
-    $("#dialog-btn-1").on("click", function () {
-      $dialog_1.dialog("open");
-    });
-
-    // Set custom dialog type 2
-    var $dialog_2 = widgets.createCustomDialog({
-      selector: "#dialog-2",
-      action_callback: function () {
-        console.log("confirm");
-      },
-      cancel_callback: function () {
-        console.log("cancel");
-      }
-    });
-    $("#dialog-btn-2").on("click", function () {
-      $dialog_2.dialog("open");
-    });
-
-    // Set custom dialog type 3
-    var $dialog_3 = widgets.createCustomDialog({
-      selector: "#dialog-3",
-      parent: $(".content"),
-      show_cancel_btn: false,
-      cancel_callback: function () {
-        console.log("cancel");
-      },
-    });
-    $("#dialog-btn-3").on("click", function () {
-      $dialog_3.dialog("open");
-    });
-
-    // Set custom dialog type 4
-    var $dialog_4 = widgets.createCustomDialog({
-      selector: "#dialog-4",
-      action_text: "Action",
-      reverse_button_positions: true,
-      full_width_button: true,
-      action_callback: function () {
-        console.log("action");
-      },
-      cancel_text: "Back",
-      cancel_callback: function () {
-        console.log("back");
-      }
-    });
-    $("#dialog-btn-4").on("click", function () {
-      $dialog_4.dialog("open");
-    });
-
-    // Create the share button and dialog
-    createShareButtonAndDialog();
-
-    // Create the gallery
-    var $gallery = $(".gallery");
-    // In practice, these images urls may come from your server via http ajax requests.
-    for (var i = 0; i < 8; i++) {
-      var item = "<a href=\"javascript:void(0)\" class=\"flex-column\">" +
-        "<img src=\"img/dummay-img.png\">" +
-        "<div>Image Caption</div>" +
-        "</a>";
-      $gallery.append($(item));
+  const initMisc = () => {
+    // custom tabs
+    if ($("#custom-tab").length) {
+      widgets.createCustomTab({ selector: "#custom-tab" });
     }
 
-    // Create custom tabs
-    widgets.createCustomTab({
-      selector: "#custom-tab"
-    });
+    // custom legend
+    if ($("#custom-legend").length) {
+      widgets.setCustomLegend($("#custom-legend"));
+    }
+  };
 
-    // Set the custom legend
-    widgets.setCustomLegend($("#custom-legend"));
-  }
+  const init = () => {
+    // Create the widget object (guard in case edaplotjs is not present)
+    if (!window.edaplotjs || !window.edaplotjs.Widgets) {
+      // If widgets library missing, avoid JS errors and fail gracefully
+      // Optionally log in dev only
+      if (window.console) console.warn("edaplotjs.Widgets not found — widgets disabled.");
+      return;
+    }
+    widgets = new window.edaplotjs.Widgets();
 
+    initDropdownsAndRadios();
+    initDialogs();
+    createShareButtonAndDialog();
+    createGalleryIfNeeded();
+    initMisc();
+  };
+
+  // Run on DOM ready
   $(init);
 })();

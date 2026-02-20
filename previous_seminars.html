@@ -1,51 +1,87 @@
 <!doctype html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Carlos Gonzalez</title>
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/widgets.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="js/menu.js"></script>
-  <script src="js/widgets.js"></script>
-  <script src="js/custom.js"></script>
-  <style>
-    .menu-widget {
-      color: rgb(255, 255, 255) !important;
-      opacity: 1 !important;
-      font-weight: 700 !important;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carlos Gonzalez — Previous Seminars</title>
+
+  <!-- Core site styles -->
+  <link href="css/frame.css" rel="stylesheet" />
+  <link href="css/controls.css" rel="stylesheet" />
+  <link href="css/widgets.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
+
+  <!-- Fonts (adjust if you prefer different ones) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="menu-container"></div>
-  	<div class="content-container">
-    		<div class="content">
-      		<div class="content-table flex-column">
-				<div class="flex-row">
-          			<div class="flex-item flex-column">
-            				<h2 class="add-top-margin">Previous Editions</h2>
-            				<hr>
-            <p class="text">
-            <ul>
-              <li> <a href="https://presidente-carlos.github.io/seminar_TT_2022.html">1st Edition - Trinity Term 2022</a> </li>
-	    
-              <li> <a href="https://presidente-carlos.github.io/seminar_MT_2022.html">2nd Edition - Michaelmas Term 2022</a> </li>
-<ul>
-            </p>
-          </div>
-	</div>
-  </div>
-</body>
+  <!-- Shared header -->
+  <header class="site-header menu-container" role="banner">
+    <div class="menu">
+      <div class="menu-table">
+        <div class="logo">
+          <a href="index.html" class="brand-link">Carlos Gonzalez</a>
+        </div>
 
+        <button class="nav-toggle menu-button" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+
+        <nav id="main-navigation" class="menu-items" role="navigation" aria-label="Primary">
+          <ul class="nav-list" style="margin:0; padding:0; list-style:none; display:flex; gap:1rem; align-items:center;">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="https://presidente-carlos.github.io/files/CV.pdf" target="_blank" rel="noopener">CV</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="presentations.html">Presentations</a></li>
+            <li><a href="https://github.com/presidente-carlos" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="content-container" id="main">
+    <div class="content">
+      <div class="content-table">
+        <header>
+          <h1 class="add-top-margin" style="margin-bottom:0.25rem;">Previous Editions</h1>
+          <hr>
+        </header>
+
+        <section aria-labelledby="previous-seminars-heading" style="margin-top:0.5rem;">
+          <h2 id="previous-seminars-heading" class="text-no-margin" style="font-size:1rem; font-weight:600;">Seminar Editions</h2>
+          <ul class="text" style="margin-top:0.5rem;">
+            <li><a href="https://presidente-carlos.github.io/seminar_TT_2022.html" target="_blank" rel="noopener">1st Edition — Trinity Term 2022</a></li>
+            <li><a href="https://presidente-carlos.github.io/seminar_MT_2022.html" target="_blank" rel="noopener">2nd Edition — Michaelmas Term 2022</a></li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer style="text-align:center; padding:2rem 1rem; color:var(--muted-text);">
+    <small>&copy; <span id="year"></span> Carlos Gonzalez — All rights reserved.</small>
+  </footer>
+
+  <script>
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // nav toggle (same small helper used across pages)
+    (function () {
+      const header = document.querySelector('.site-header');
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('main-navigation');
+      if (!btn || !nav || !header) return;
+
+      btn.addEventListener('click', () => {
+        const open = header.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        nav.style.display = open ? 'block' : '';
+      });
+    })();
+  </script>
+</body>
 </html>

@@ -1,8 +1,40 @@
+/* icons.css — cleaned and theming-ready
+   Keeps .fa selector for compatibility but uses CSS variables for easy tweaks. */
+
+:root{
+  --icon-size: 30px;
+  --icon-padding: 12px;     /* reduced from 20px to more typical spacing */
+  --icon-bg: transparent;
+  --icon-color: inherit;
+  --icon-radius: 50%;
+}
+
+/* Basic circular icon container (compatible with text or font icons) */
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--icon-padding);
+  font-size: var(--icon-size);
+  width: calc(var(--icon-size) + (var(--icon-padding) * 2));
+  height: calc(var(--icon-size) + (var(--icon-padding) * 2));
   text-align: center;
   text-decoration: none;
-  border-radius: 50%;
+  border-radius: var(--icon-radius);
+  background: var(--icon-bg);
+  color: var(--icon-color);
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Small / large helpers */
+.fa.small  { --icon-size: 18px; --icon-padding: 8px; }
+.fa.large  { --icon-size: 36px; --icon-padding: 12px; }
+
+/* Accessible focus state for keyboard users */
+.fa:focus {
+  outline: 3px solid rgba(11,61,145,0.18);
+  outline-offset: 2px;
+  border-radius: calc(var(--icon-radius) + 2px);
 }

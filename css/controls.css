@@ -1,61 +1,63 @@
-/*************************************************************************
- * GitHub: https://github.com/yenchiah/project-website-template
- * Version: v3.29
- * This CSS file has control elements that do not require JavaScript
- * If you want to keep this template updated, avoid modifying this file
- * Instead, add your own CSS in the index.css
- *************************************************************************/
+/* controls.css — cleaned & consolidated
+   Keeps original class names for compatibility.
+   Use together with a global variables layer (see recommendations). */
 
+:root{
+  /* quick tokens — adjust in your main stylesheet */
+  --control-font-sans: "Inter", "Source Sans Pro", "Open Sans", Helvetica, Arial, sans-serif;
+  --control-font-serif: "Merriweather", Georgia, "Times New Roman", serif;
+  --control-radius-sm: 4px;
+  --control-radius-pill: 48px;
+  --control-border: 1px solid #7d7d7d;
+  --control-bg: #ffffff;
+  --control-muted: #7d7d7d;
+  --accent-primary: #007bff;
+  --accent-danger: #dc3545;
+  --accent-info: #17a2b8;
+}
+
+/* ---------- Utility: reduce repetition for user-select and box-sizing ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Disable selection for interactive control wrappers */
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ---------- Button / image-button base ---------- */
 .custom-image-button {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: stretch;
-  align-content: stretch;
-  box-sizing: border-box;
   text-decoration: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
+/* Base button shared styles */
 .custom-button {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-family: var(--control-font-sans);
   padding: 10px 20px;
-  text-align: center;
   font-size: 14px;
-  line-height: 15px;
-  outline: none;
-  border-radius: 2px;
+  line-height: 1;
+  border-radius: var(--control-radius-sm);
   cursor: pointer;
-  box-shadow: none;
-  transition: background-color 0.1s, box-shadow 0.1s, border 0.1s;
   text-decoration: none;
-  display: block;
-  box-sizing: border-box;
-  color: white;
-  border: 1px solid #7d7d7d;
-  background-color: #7d7d7d;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  display: inline-block;
+  color: #fff;
+  border: var(--control-border);
+  background-color: var(--control-muted);
+  transition: background-color .12s ease, border-color .12s ease, transform .08s ease;
 }
 
-.custom-button:not(:disabled):hover {
-  background-color: #4d4d4d;
-  border-color: #4d4d4d;
-}
-
+.custom-button:not(:disabled):hover,
 .custom-button:not(:disabled):active {
   background-color: #4d4d4d;
   border-color: #4d4d4d;
+  transform: translateY(-1px);
 }
 
 .custom-button:disabled {
@@ -63,197 +65,89 @@
   cursor: default;
 }
 
-.custom-button-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-}
+/* Button variants */
+.custom-button-primary { background-color: var(--accent-primary); border-color: var(--accent-primary); }
+.custom-button-primary:not(:disabled):hover,
+.custom-button-primary:not(:disabled):active { background-color: #005cbf; border-color: #005cbf; }
 
-.custom-button-primary:not(:disabled):hover {
-  background-color: #005cbf;
-  border-color: #005cbf;
-}
+.custom-button-danger { background-color: var(--accent-danger); border-color: var(--accent-danger); }
+.custom-button-danger:not(:disabled):hover,
+.custom-button-danger:not(:disabled):active { background-color: #a71120; border-color: #a71120; }
 
-.custom-button-primary:not(:disabled):active {
-  background-color: #005cbf;
-  border-color: #005cbf;
-}
+.custom-button-info { background-color: var(--accent-info); border-color: var(--accent-info); }
+.custom-button-info:not(:disabled):hover,
+.custom-button-info:not(:disabled):active { background-color: #007082; border-color: #007082; }
 
-.custom-button-danger {
-  background-color: #dc3545;
-  border-color: #dc3545;
-}
-
-.custom-button-danger:not(:disabled):hover {
-  background-color: #a71120;
-  border-color: #a71120;
-}
-
-.custom-button-danger:not(:disabled):active {
-  background-color: #a71120;
-  border-color: #a71120;
-}
-
-.custom-button-info {
-  background-color: #17a2b8;
-  border-color: #17a2b8;
-}
-
-.custom-button-info:not(:disabled):hover {
-  background-color: #007082;
-  border-color: #007082;
-}
-
-.custom-button-info:not(:disabled):active {
-  background-color: #007082;
-  border-color: #007082;
-}
-
+/* ---------- Flat / pill buttons ---------- */
 .custom-button-flat {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  text-align: center;
+  font-family: var(--control-font-sans);
   font-size: 16px;
-  line-height: 16px;
-  outline: none;
-  border-radius: 48px;
+  line-height: 1;
+  border-radius: var(--control-radius-pill);
   cursor: pointer;
-  box-shadow: none;
-  transition: background-color 0.1s, box-shadow 0.1s, border 0.1s;
-  text-decoration: none;
-  color: black;
-  border: 1px solid #777777;
-  background-color: white;
-  padding: 13px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  align-content: center;
-  box-sizing: border-box;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 13px;
+  color: #000;
+  border: 1px solid #777777;
+  background-color: #fff;
+  transition: transform .08s ease;
 }
 
-.custom-button-flat.large {
-  font-size: 18px;
-  line-height: 18px;
-  padding: 17px;
-  border-radius: 56px;
-}
+.custom-button-flat.small { font-size: 14px; padding: 12px; border-radius: 42px; }
+.custom-button-flat.large { font-size: 18px; padding: 17px; border-radius: 56px; }
 
-.custom-button-flat.small {
-  font-size: 14px;
-  line-height: 14px;
-  padding: 12px;
-  border-radius: 42px;
-}
+.custom-button-flat:disabled { opacity: 0.4; cursor: default; }
 
-.custom-button-flat:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
+.custom-button-flat img { width: 20px; height: 20px; }
+.custom-button-flat.small img { width: 16px; height: 16px; }
+.custom-button-flat.large img { width: 24px; height: 24px; }
 
-.custom-button-flat img {
-  width: 20px;
-  height: 20px;
-}
+/* small spacing for icon + label */
+.custom-button-flat span { margin-left: 6px; }
 
-.custom-button-flat.small img {
-  width: 16px;
-  height: 16px;
-}
-
-.custom-button-flat.large img {
-  width: 24px;
-  height: 24px;
-}
-
-.custom-button-flat span {
-  margin-left: 6px;
-}
-
+/* ---------- Text inputs / textareas ---------- */
 input.custom-textbox,
 textarea.custom-textbox {
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  box-sizing: border-box;
-  padding: 5px 10px;
-  background: rgb(255, 255, 255);
-  border: 1px solid #7d7d7d;
+  font-family: var(--control-font-sans);
+  padding: 6px 10px;
+  background: var(--control-bg);
+  border: var(--control-border);
   font-size: 16px;
   outline: none;
-  border-radius: 2px;
+  border-radius: var(--control-radius-sm);
   resize: vertical;
-}
-
-input.custom-textbox {
   min-height: 37px;
-  max-height: 37px;
 }
 
-textarea.custom-textbox {
-  min-height: 60px;
-  max-height: 200px;
-}
+textarea.custom-textbox { min-height: 60px; max-height: 200px; }
 
 input[readonly].custom-textbox,
-textarea[readonly].custom-textbox {
-  cursor: default;
-  background: rgb(230, 230, 230);
-}
+textarea[readonly].custom-textbox { cursor: default; background: #e6e6e6; }
 
+/* ---------- Control group layout ---------- */
 .control-group {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
   align-items: center;
-  align-content: stretch;
-  box-sizing: border-box;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  gap: 0.75rem;
 }
 
-.control-group .custom-image-button {
-  margin: 10px 0 10px 0;
-}
+/* preserve original margin behavior where used */
+.control-group .custom-image-button,
+.control-group .custom-button,
+.control-group .custom-button-flat,
+.control-group .custom-textbox { margin: 10px 0; }
 
-.control-group .custom-image-button:not(:last-child) {
-  margin-right: 15px;
-}
+.control-group .custom-image-button:not(:last-child),
+.control-group .custom-button:not(:last-child),
+.control-group .custom-button-flat:not(:last-child),
+.control-group .custom-textbox:not(:last-child) { margin-right: 15px; }
 
-.control-group .custom-button {
-  margin: 10px 0 10px 0;
-}
-
-.control-group .custom-button:not(:last-child) {
-  margin-right: 15px;
-}
-
-.control-group .custom-button-flat {
-  margin: 10px 0 10px 0;
-}
-
-.control-group .custom-button-flat:not(:last-child) {
-  margin-right: 15px;
-}
-
-.control-group .custom-textbox {
-  margin: 10px 0 10px 0;
-}
-
-.control-group .custom-textbox:not(:last-child) {
-  margin-right: 15px;
-}
-
-@media screen and (max-width: 500px) {
+/* mobile stretch helper */
+@media (max-width: 500px) {
   .stretch-on-mobile {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -262,182 +156,26 @@ textarea[readonly].custom-textbox {
   }
 }
 
-.pulse-white {
-  box-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
-  animation: pulse-white 2s infinite;
+/* ---------- Pulse animations (simplified) ----------
+   Kept separate classes for color variants but removed vendor-prefixed keyframes.
+   Modern browsers don't require -webkit/-moz on keyframes for this animation. */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.0); }
+  70% { box-shadow: 0 0 0 15px rgba(0,0,0,0.0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,0,0,0.0); }
 }
 
-@-webkit-keyframes pulse-white {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
-  }
-
-  70% {
-    -webkit-box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-  }
-
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
+/* helper to create a pulsing glow using an explicit color */
+.pulse {
+  animation: pulse 2s infinite;
+  /* The element must define explicit box-shadow color inline or via another class */
 }
 
-@keyframes pulse-white {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
-  }
+.pulse-white   { box-shadow: 0 0 0 rgba(255,255,255,0.5); animation-name: pulse; }
+.pulse-black   { box-shadow: 0 0 0 rgba(0,0,0,0.5); animation-name: pulse; }
+.pulse-primary { box-shadow: 0 0 0 rgba(0,123,255,0.5); animation-name: pulse; }
+.pulse-danger  { box-shadow: 0 0 0 rgba(220,53,69,0.5); animation-name: pulse; }
+.pulse-info    { box-shadow: 0 0 0 rgba(23,162,184,0.5); animation-name: pulse; }
 
-  70% {
-    -moz-box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-  }
-
-  100% {
-    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
-}
-
-.pulse-black {
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
-  animation: pulse-black 2s infinite;
-}
-
-@-webkit-keyframes pulse-black {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
-  }
-
-  70% {
-    -webkit-box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
-  }
-
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
-
-@keyframes pulse-black {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
-  }
-
-  70% {
-    -moz-box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
-    box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
-  }
-
-  100% {
-    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
-
-.pulse-primary {
-  box-shadow: 0 0 0 rgba(0, 123, 255, 0.5);
-  animation: pulse-primary 2s infinite;
-}
-
-@-webkit-keyframes pulse-primary {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
-  }
-
-  70% {
-    -webkit-box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
-  }
-
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
-  }
-}
-
-@keyframes pulse-primary {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
-    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
-  }
-
-  70% {
-    -moz-box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
-    box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
-  }
-
-  100% {
-    -moz-box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
-    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
-  }
-}
-
-.pulse-danger {
-  box-shadow: 0 0 0 rgba(220, 53, 69, 0.5);
-  animation: pulse-danger 2s infinite;
-}
-
-@-webkit-keyframes pulse-danger {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.5);
-  }
-
-  70% {
-    -webkit-box-shadow: 0 0 0 15px rgba(220, 53, 69, 0);
-  }
-
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
-  }
-}
-
-@keyframes pulse-danger {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.5);
-    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.5);
-  }
-
-  70% {
-    -moz-box-shadow: 0 0 0 15px rgba(220, 53, 69, 0);
-    box-shadow: 0 0 0 15px rgba(220, 53, 69, 0);
-  }
-
-  100% {
-    -moz-box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
-    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
-  }
-}
-
-.pulse-info {
-  box-shadow: 0 0 0 rgba(23, 162, 184, 0.5);
-  animation: pulse-info 2s infinite;
-}
-
-@-webkit-keyframes pulse-info {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(23, 162, 184, 0.5);
-  }
-
-  70% {
-    -webkit-box-shadow: 0 0 0 15px rgba(23, 162, 184, 0);
-  }
-
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(23, 162, 184, 0);
-  }
-}
-
-@keyframes pulse-info {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(23, 162, 184, 0.5);
-    box-shadow: 0 0 0 0 rgba(23, 162, 184, 0.5);
-  }
-
-  70% {
-    -moz-box-shadow: 0 0 0 15px rgba(23, 162, 184, 0);
-    box-shadow: 0 0 0 15px rgba(23, 162, 184, 0);
-  }
-
-  100% {
-    -moz-box-shadow: 0 0 0 0 rgba(23, 162, 184, 0);
-    box-shadow: 0 0 0 0 rgba(23, 162, 184, 0);
-  }
-}
+/* if you want a different speed / ease, override animation on the element:
+   .my-element { animation-duration: 1.5s; animation-timing-function: ease-in-out; } */

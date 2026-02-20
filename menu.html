@@ -1,17 +1,26 @@
-<div class="menu">
-  <div class="menu-table flex-row-space-between">
-    <div class="logo flex-row-center">
-      <a href="index.html">Carlos Gonzalez</a>
-    </div>
-    <a class="menu-button" tabindex="0" href="javascript:void(0)">
-      <img src="img/menu.png">
-    </a>
-    <div class="menu-items flex-row-center flex-item">
-      <a href="index.html" class="menu-index">Overview</a>
-      <a href="https://presidente-carlos.github.io/files/CV.pdf">CV</a> 
-      <a href="research.html" class="menu-research">Research</a>
-	 <a href="presentations.html" class="menu-presentations">Presentations</a>
-      <a href="https://github.com/presidente-carlos">GitHub</a>
+<!-- menu.html -->
+<header class="site-header menu-container" role="banner">
+  <div class="menu">
+    <div class="menu-table">
+      <div class="logo">
+        <a href="index.html" class="brand-link">Carlos Gonzalez</a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button class="nav-toggle menu-button" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <!-- Navigation -->
+      <nav id="main-navigation" class="menu-items" role="navigation" aria-label="Primary">
+        <ul class="nav-list" style="margin:0; padding:0; list-style:none; display:flex; gap:1rem; align-items:center;">
+          <li><a href="index.html" class="menu-index">Overview</a></li>
+          <li><a href="https://presidente-carlos.github.io/files/CV.pdf" target="_blank" rel="noopener">CV</a></li>
+          <li><a href="research.html" class="menu-research">Research</a></li>
+          <li><a href="presentations.html" class="menu-presentations">Presentations</a></li>
+          <li><a href="https://github.com/presidente-carlos" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
     </div>
   </div>
-</div>
+</header>

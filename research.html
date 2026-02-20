@@ -26,10 +26,11 @@
       margin: 0.5rem 0 0.75rem 0;
     }
 
-    /* Bold titles (links) and years */
-    .content .text ul li a,
-    .content .text ul li strong.title,
-    .content .text ul li span.year {
+    /* Bold titles (links) and years
+       NOTE: use selectors that match the DOM: the UL has class "text" (ul.text) */
+    .content ul.text li a,
+    .content ul.text li strong.title,
+    .content ul.text li span.year {
       font-weight: 700;
     }
 
@@ -40,17 +41,17 @@
     }
 
     /* Slight vertical spacing for list items */
-    .content .text ul li {
+    .content ul.text li {
       margin: 0.45rem 0;
       line-height: 1.45;
     }
 
     /* Keep anchor style consistent but clearly bolded */
-    .content .text ul li a {
+    .content ul.text li a {
       color: inherit;
       text-decoration: none;
     }
-    .content .text ul li a:hover {
+    .content ul.text li a:hover {
       text-decoration: underline;
     }
 
@@ -131,7 +132,7 @@
         </section>
 
         <section aria-labelledby="notes-heading" style="margin-top:1rem;">
-          <h2 id="notes-heading" class="add-top-margin">Additional Notes</h2>
+          <h2 id="prephd-heading" class="add-top-margin">Additional Notes</h2>
           <hr>
           <ul class="text" style="margin-top:0.5rem;">
             <li>
@@ -151,15 +152,19 @@
             <li>
               <strong><a href="https://github.com/presidente-carlos/adverse_selection" target="_blank" rel="noopener">Adaptive Wage Setting: A Prior-free Theory of Adverse Selection and Monopsony Markets</a></strong>, <strong class="year">2023</strong>, <em>University of Oxford</em>.
             </li>
-            /*<li><a href="https://github.com/presidente-carlos/knapsack_bandits" target="_blank" rel="noopener">Hiring Decisions with Knapsack Bandits</a>, 2023, <em>University of Oxford</em>.</li>*/
+            <!--
+            <li><a href="https://github.com/presidente-carlos/knapsack_bandits" target="_blank" rel="noopener">Hiring Decisions with Knapsack Bandits</a>, 2023, <em>University of Oxford</em>.</li>
+            -->
             <li>
               <strong><a href="https://presidente-carlos.github.io/files/undergrad_research/health_insurance_2021.pdf" target="_blank" rel="noopener">An Econometric Insight into Health Insurance Demand: Aporophobia and Racism as Drivers of Health Insurance Demand in the UK (1991–2008)</a></strong>, <strong class="year">2021</strong>.
             </li>
             <li>
               <strong><a href="https://presidente-carlos.github.io/files/undergrad_research/china_2021.pdf" target="_blank" rel="noopener">A Narratological Approach to Chinese Politics: Developing a Narrative-Based Theoretical Framework in South East China Sea and Hong Kong Mainland Conflicts (1974–2020)</a></strong>, <strong class="year">2021</strong>.
             </li>
-            /*<li><a href="https://presidente-carlos.github.io/files/undergrad_research/china_2020.pdf" target="_blank" rel="noopener">Chinese Narrative in the South East China Sea and its Effect on Chinese Realpolitik: Developing a Theoretical Framework for Understanding Chinese Imperial Practices</a>, 2020, <em>Bocconi University</em>.</li>*/
-            /*<li><a href="https://presidente-carlos.github.io/files/undergrad_research/pregnancy_2019.pdf" target="_blank" rel="noopener">Pregnancy and its Effects on Education: An Econometric Insight into the Impact of Teenage Pregnancy on Higher Education</a>, 2019, <em>University of California, Berkeley</em>.</li>*/
+            <!--
+            <li><a href="https://presidente-carlos.github.io/files/undergrad_research/china_2020.pdf" target="_blank" rel="noopener">Chinese Narrative in the South East China Sea and its Effect on Chinese Realpolitik: Developing a Theoretical Framework for Understanding Chinese Imperial Practices</a>, 2020, <em>Bocconi University</em>.</li>
+            <li><a href="https://presidente-carlos.github.io/files/undergrad_research/pregnancy_2019.pdf" target="_blank" rel="noopener">Pregnancy and its Effects on Education: An Econometric Insight into the Impact of Teenage Pregnancy on Higher Education</a>, 2019, <em>University of California, Berkeley</em>.</li>
+            -->
           </ul>
         </section>
 

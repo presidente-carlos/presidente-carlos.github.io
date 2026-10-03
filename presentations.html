@@ -11,12 +11,65 @@
   <link href="css/widgets.css" rel="stylesheet" />
   <link href="css/custom.css" rel="stylesheet" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <!-- Fonts (same as research.html) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Page-specific tweaks (identical to research.html; feel free to move to css/custom.css) -->
+  <style>
+    /* spacing: a little space after the main heading (no hr) */
+    #intro-heading { margin-bottom: 0.75rem; }
+
+    /* make all hr look consistent: 1px height, muted background */
+    hr {
+      border: 0;
+      height: 1px;
+      background: var(--muted-border, #ddd);
+      margin: 0.5rem 0 0.75rem 0;
+    }
+
+    /* Bold titles (links) and years */
+    .content ul.text li a,
+    .content ul.text li strong.title,
+    .content ul.text li span.year {
+      font-weight: 700;
+    }
+
+    /* Lighter but readable descriptions */
+    .muted-desc {
+      color: #6b6b6b; /* medium-light gray; readable on white */
+      font-weight: 400;
+    }
+
+    /* Slight vertical spacing for list items */
+    .content ul.text li {
+      margin: 0.45rem 0;
+      line-height: 1.45;
+    }
+
+    /* Link styling: blue links, bold titles */
+    :root {
+      --link-color: #0b66ff;
+      --link-hover: #064fd6;
+    }
+    .content ul.text li a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+    .content ul.text li a:hover,
+    .content ul.text li a:focus {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    /* ensure the H2+HR rule is consistent */
+    section h2 + hr {
+      margin: 0.5rem 0 0.75rem 0;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Header (shared) -->
+  <!-- Shared header -->
   <header class="site-header menu-container" role="banner">
     <div class="menu">
       <div class="menu-table">
@@ -33,7 +86,7 @@
             <li><a href="index.html">Overview</a></li>
             <li><a href="https://presidente-carlos.github.io/files/CV.pdf" target="_blank" rel="noopener">CV</a></li>
             <li><a href="research.html">Research</a></li>
-            <li><a href="presentations.html" class="menu-widget">Presentations</a></li>
+            <li><a href="presentations.html" class="menu-widget" aria-current="page">Presentations</a></li>
             <li><a href="https://github.com/presidente-carlos" target="_blank" rel="noopener">GitHub</a></li>
           </ul>
         </nav>
@@ -46,107 +99,88 @@
       <div class="content-table">
 
         <header>
-          <h1 id="intro-heading"
-              style="margin:0 0 0.75rem 0; font-family:'Merriweather', serif; font-weight:700;">
-            Presentations
-          </h1>
+          <h1 id="intro-heading" style="margin:0 0 0.5rem 0; font-family: 'Merriweather', serif; font-weight:700;">Presentations</h1>
         </header>
 
-        <!-- Section 1 -->
-        <section aria-labelledby="presentations-heading" style="margin-bottom:1.25rem;">
-          <h2 id="presentations-heading"
-              class="add-top-margin"
-              style="margin-bottom:0.25rem;">
-            Working Papers and Work in Progress
-          </h2>
+        <section aria-labelledby="own-heading" style="margin-top:0.5rem;">
+          <h2 id="own-heading" class="text-no-margin">Working Papers and Work in Progress</h2>
           <hr>
 
           <ul class="text" style="margin-top:0.5rem;">
-          <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/adaptive_clusters_ucl.pdf" target="_blank" rel="noopener">
-                Adaptive Design of Clustered Surveys and Experiments
-              </a>, 2026. CeMMAP, UCL.
-            </li>
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/mini_signaled_bandits.pdf" target="_blank" rel="noopener">
-                Signaled Bandits
-              </a>, 2025. Econometrics Lunch, University of Oxford.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/adaptive_clusters_ucl.pdf" target="_blank" rel="noopener">Adaptive Design of Clustered Surveys and Experiments</a></strong>, <strong class="year">2026</strong>
+              <span class="muted-desc">. CeMMAP, UCL.</span>
             </li>
+
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/sequencing.pdf" target="_blank" rel="noopener">
-                Optimal Ordering and Information Strategies in Sequential Search Problems
-              </a>, 2024. Student Research Workshop in Micro Theory and Univ Graduate Lunch Seminar, University of Oxford.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/mini_signaled_bandits.pdf" target="_blank" rel="noopener">Signaled Bandits</a></strong>, <strong class="year">2025</strong>
+              <span class="muted-desc">. Econometrics Lunch, University of Oxford.</span>
             </li>
+
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/adverse_selection_gonzalez.pdf" target="_blank" rel="noopener">
-                Adaptive Wage Setting: A Prior-Free Theory of Adverse Selection and Monopsony Markets
-              </a>, 2023. CIREQ Conference on Big Data and Artificial Intelligence, McGill University.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/sequencing.pdf" target="_blank" rel="noopener">Optimal Ordering and Information Strategies in Sequential Search Problems</a></strong>, <strong class="year">2024</strong>
+              <span class="muted-desc">. Student Research Workshop in Micro Theory and Univ Graduate Lunch Seminar, University of Oxford.</span>
+            </li>
+
+            <li>
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/adverse_selection_gonzalez.pdf" target="_blank" rel="noopener">Adaptive Wage Setting: A Prior-Free Theory of Adverse Selection and Monopsony Markets</a></strong>, <strong class="year">2023</strong>
+              <span class="muted-desc">. CIREQ Conference on Big Data and Artificial Intelligence, McGill University.</span>
             </li>
           </ul>
         </section>
 
-        <!-- Section 2 -->
-        <section aria-labelledby="external-papers-heading">
-          <h2 id="external-papers-heading"
-              class="add-top-margin"
-              style="margin-bottom:0.25rem;">
-            External Papers
-          </h2>
+
+        <section aria-labelledby="external-heading" style="margin-top:0.5rem;">
+          <h2 id="external-heading" class="text-no-margin">External Papers</h2>
           <hr>
 
           <ul class="text" style="margin-top:0.5rem;">
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/recommender_systems.pdf" target="_blank" rel="noopener">
-                Introduction to Recommender Systems
-              </a> by Charu C. Aggarwal, 2025. Machine Learning Reading Group, University of Oxford.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/recommender_systems.pdf" target="_blank" rel="noopener">Introduction to Recommender Systems</a></strong>, <strong class="year">2025</strong> <span class="muted-desc">(by Charu C. Aggarwal)</span>
+              <span class="muted-desc">. Machine Learning Reading Group, University of Oxford.</span>
             </li>
+
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/bhj_formula_iv.pdf" target="_blank" rel="noopener">
-                Design-based Identification with Formula Instruments
-              </a> by Borusyak, Hull & Jaravel, 2024. Topics in Econometrics, University of Oxford.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/bhj_formula_iv.pdf" target="_blank" rel="noopener">Design-based Identification with Formula Instruments</a></strong>, <strong class="year">2024</strong> <span class="muted-desc">(by Borusyak, Hull &amp; Jaravel)</span>
+              <span class="muted-desc">. Topics in Econometrics, University of Oxford.</span>
             </li>
+
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/strategic_decentralized_matching.pdf" target="_blank" rel="noopener">
-                Strategic Decentralized Matching
-              </a> by Ferdowsian, Nierdele & Yariv, 2024. Micro Theory Reading Group, University of Oxford.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/strategic_decentralized_matching.pdf" target="_blank" rel="noopener">Strategic Decentralized Matching</a></strong>, <strong class="year">2024</strong> <span class="muted-desc">(by Ferdowsian, Nierdele &amp; Yariv)</span>
+              <span class="muted-desc">. Micro Theory Reading Group, University of Oxford.</span>
             </li>
+
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/interpolation_belkin.pdf" target="_blank" rel="noopener">
-                Fit without Fear
-              </a> by M. Belkin, 2023. Topics in Econometrics, University of Oxford.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/interpolation_belkin.pdf" target="_blank" rel="noopener">Fit without Fear</a></strong>, <strong class="year">2023</strong> <span class="muted-desc">(by M. Belkin)</span>
+              <span class="muted-desc">. Topics in Econometrics, University of Oxford.</span>
             </li>
+
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/oco_hazan.pdf" target="_blank" rel="noopener">
-                Online Convex Optimization
-              </a> by E. Hazan, 2023. Topics in Econometrics, University of Oxford.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/oco_hazan.pdf" target="_blank" rel="noopener">Online Convex Optimization</a></strong>, <strong class="year">2023</strong> <span class="muted-desc">(by E. Hazan)</span>
+              <span class="muted-desc">. Topics in Econometrics, University of Oxford.</span>
             </li>
           </ul>
         </section>
 
-	<!-- Section 3 -->
-        <section aria-labelledby="external-papers-heading">
-          <h2 id="external-papers-heading"
-              class="add-top-margin"
-              style="margin-bottom:0.25rem;">
-            Resources and Miscellaneous
-          </h2>
+
+        <section aria-labelledby="misc-heading" style="margin-top:1rem;">
+          <h2 id="misc-heading" class="add-top-margin">Resources and Miscellaneous</h2>
           <hr>
 
           <ul class="text" style="margin-top:0.5rem;">
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/thesis_writing.pdf" target="_blank" rel="noopener">
-                How to Write a Thesis
-              </a>, 2025. MPhil Thesis Writing Student Panel, University of Oxford.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/thesis_writing.pdf" target="_blank" rel="noopener">How to Write a Thesis</a></strong>, <strong class="year">2025</strong>
+              <span class="muted-desc">. MPhil Thesis Writing Student Panel, University of Oxford.</span>
             </li>
+
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/haiku_presentation_2.pdf" target="_blank" rel="noopener">
-                Who is Carlos and Why is He in the Econometrics Group II?
-              </a>, 2024. Econometrics Lunch, University of Oxford.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/haiku_presentation_2.pdf" target="_blank" rel="noopener">Who is Carlos and Why is He in the Econometrics Group II?</a></strong>, <strong class="year">2024</strong>
+              <span class="muted-desc">. Econometrics Lunch, University of Oxford.</span>
             </li>
+
             <li>
-              <a href="https://presidente-carlos.github.io/files/presentations/haiku_presentation.pdf" target="_blank" rel="noopener">
-                Who is Carlos and Why is He in the Econometrics Group?
-              </a>, 2023. Econometrics Lunch, University of Oxford.
+              <strong class="title"><a href="https://presidente-carlos.github.io/files/presentations/haiku_presentation.pdf" target="_blank" rel="noopener">Who is Carlos and Why is He in the Econometrics Group?</a></strong>, <strong class="year">2023</strong>
+              <span class="muted-desc">. Econometrics Lunch, University of Oxford.</span>
             </li>
           </ul>
         </section>
@@ -159,9 +193,12 @@
     <small>&copy; <span id="year"></span> Carlos Gonzalez — All rights reserved.</small>
   </footer>
 
+  <!-- small helpers -->
   <script>
+    // footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // nav toggle (shared pattern)
     (function () {
       const header = document.querySelector('.site-header');
       const btn = document.querySelector('.nav-toggle');
